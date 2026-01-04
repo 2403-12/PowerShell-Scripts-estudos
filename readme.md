@@ -1,3 +1,5 @@
+Script PowerShell para verificação de programas instalados no seu computador
+
 $paths = @(
     "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*",
     "HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*",
