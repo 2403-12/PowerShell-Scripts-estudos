@@ -1,13 +1,13 @@
 $paths = @(
-"HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*",
-"HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*",
-"HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*"
+    "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*",
+    "HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*",
+    "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*"
 )
 
 Get-ItemProperty $paths |
-Select DisplayName, DisplayVersion, Publisher |
+Select-Object DisplayName, DisplayVersion, Publisher |
 Where-Object { $_.DisplayName } |
-Sort DisplayName
+Sort-Object DisplayName
 
-# Para Store Apps
-Get-AppxPackage | Select Name, Version
+# Para aplicativos da Microsoft Store
+Get-AppxPackage | Select-Object Name, Version
