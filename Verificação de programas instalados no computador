@@ -9,3 +9,5 @@ Select DisplayName, DisplayVersion, Publisher |
 Where-Object { $_.DisplayName } |
 Sort DisplayName
 
+# Para Store Apps
+Get-AppxPackage | Select Name, Version
